@@ -1,9 +1,11 @@
-import './index.module.scss';
+import styles from './index.module.scss';
 import React from 'react';
 
 const Work: React.FC = () => (
   <React.Fragment>
-    <h1 style={{ color: 'white', fontSize: '30px' }}>Component Work is working file!</h1>
+    <section className='section' id='work'>
+      Component Work is working file!
+    </section>
   </React.Fragment>
 );
 

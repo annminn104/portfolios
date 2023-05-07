@@ -1,0 +1,66 @@
+@import '../../../styles/variables/color';
+
+.button {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  color: $green;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid $green;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 8%;
+      height: 500%;
+      background: $palette1;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%) rotate(-60deg);
+      -ms-transform: translate(-50%, -50%) rotate(-60deg);
+      transform: translate(-50%, -50%) rotate(-60deg);
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+  &:hover {
+    color: $white;
+    span::before {
+      -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+      -ms-transform: translate(-50%, -50%) rotate(-90deg);
+      transform: translate(-50%, -50%) rotate(-90deg);
+      width: 100%;
+      background: $green;
+    }
+  }
+  &:active {
+    span::before {
+      background: $green;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    padding: 0.4em 1em;
+  }
+}
